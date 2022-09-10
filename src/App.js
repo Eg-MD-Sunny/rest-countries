@@ -52,6 +52,5 @@ function Country(props){
 }
 //1.1 End
 
-
 export default App;
 
