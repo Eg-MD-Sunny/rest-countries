@@ -1,25 +1,35 @@
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+{/*==================================================>> Component Call */}
+		<LoadCountries></LoadCountries>
     </div>
   );
 }
 
+
+//===================================================>>1.Create Component 
+function LoadCountries(){
+//===================================================>>2.Data Store	
+	const [countries,setCountries] = useState([])
+//2.End
+//===================================================>>3.Data Load	
+	useEffect(()=>{
+		fetch('https://restcountries.com/v3.1/all')
+		.then(res=>res.json())
+		.then(data=>setCountries(data.slice(240)))
+	},[])
+	return(
+//3.End
+//===================================================>>4.ReturnValue Show in UI		
+		<div>
+			<h1>Loaded Countries:{countries.length}</h1>
+		</div>
+//4.End		
+	)
+}
 export default App;
+//1.End
