@@ -27,6 +27,9 @@ function LoadCountries(){
 //===================================================>>4.ReturnValue Show in UI		
 		<div>
 			<h1>Loaded Countries:{countries.length}</h1>
+			{
+				countries.map(country=><p>{country.name.common}</p>)
+			}
 		</div>
 //4.End		
 	)
