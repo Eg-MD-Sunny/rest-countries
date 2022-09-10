@@ -41,8 +41,6 @@ function LoadCountries(){
 //1.End
 
 
-
-
 //===================================================>>1.1 Create Component 
 function Country(props){
 	return (
