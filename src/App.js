@@ -28,11 +28,27 @@ function LoadCountries(){
 		<div>
 			<h1>Loaded Countries:{countries.length}</h1>
 			{
-				countries.map(country=><p>{country.name.common}</p>)
+				countries.map(country=><p><Country name={country.name.common}></Country></p>)
 			}
 		</div>
 //4.End		
 	)
 }
-export default App;
 //1.End
+
+
+
+
+//===================================================>>1.1 Create Component 
+function Country(props){
+	return (
+		<div>
+			<h2>Name:{props.name}</h2>
+		</div>
+	)
+}
+//1.1 End
+
+
+export default App;
+
