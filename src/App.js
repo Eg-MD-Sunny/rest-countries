@@ -28,7 +28,11 @@ function LoadCountries(){
 		<div>
 			<h1>Loaded Countries:{countries.length}</h1>
 			{
-				countries.map(country=><p><Country name={country.name.common}></Country></p>)
+				countries.map(country=><p>
+					<Country 
+						name={country.name.common}
+						polulation={country.population}
+				    ></Country></p>)
 			}
 		</div>
 //4.End		
@@ -44,6 +48,7 @@ function Country(props){
 	return (
 		<div>
 			<h2>Name:{props.name}</h2>
+			<p><small>Name:{props.polulation}</small></p>
 		</div>
 	)
 }
