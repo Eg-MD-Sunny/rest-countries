@@ -1,56 +1,19 @@
-import { useEffect, useState } from 'react';
 import './App.css';
+import Countries from './Components/Countries/Countries';
+import Footer from './Components/Footer/Footer';
+import Header from './Components/Header/Header';
+import Person from './Components/Person/Person';
+
 
 function App() {
   return (
     <div className="App">
-{/*==================================================>> Component Call */}
-		<LoadCountries></LoadCountries>
+		<Header></Header>
+		<Countries></Countries>
+		<Person></Person>
+		<Footer></Footer>
     </div>
   );
 }
-
-
-//===================================================>>1.Create Component 
-function LoadCountries(){
-//===================================================>>2.Data Store	
-	const [countries,setCountries] = useState([])
-//2.End
-//===================================================>>3.Data Load	
-	useEffect(()=>{
-		fetch('https://restcountries.com/v3.1/all')
-		.then(res=>res.json())
-		.then(data=>setCountries(data.slice(240)))
-	},[])
-	return(
-//3.End
-//===================================================>>4.ReturnValue Show in UI		
-		<div>
-			<h1>Loaded Countries:{countries.length}</h1>
-			{
-				countries.map(country=><p>
-					<Country 
-						name={country.name.common}
-						polulation={country.population}
-				    ></Country></p>)
-			}
-		</div>
-//4.End		
-	)
-}
-//1.End
-
-
-//===================================================>>1.1 Create Component 
-function Country(props){
-	return (
-		<div>
-			<h2>Name:{props.name}</h2>
-			<p><small>Name:{props.polulation}</small></p>
-		</div>
-	)
-}
-//1.1 End
-
 export default App;
 
