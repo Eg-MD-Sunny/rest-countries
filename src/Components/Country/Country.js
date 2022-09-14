@@ -1,9 +1,12 @@
 import React from 'react';
+import './Country.css';
 
 const Country = (props) => {
     return (
-        <div>
-            <h3>Country Name:<small>{props.name}</small></h3>
+        <div className="country">
+            <h1>Country Name:<small>{props.name}</small></h1>
+            <p>Population:<small>{props.population}</small></p>
+            <p>Area:<small>{props.area}</small></p>
         </div>
     );
 };
